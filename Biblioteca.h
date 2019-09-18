@@ -23,5 +23,19 @@ class Biblioteca{
 
 };
 
+class Libro : public Volumen{
+private:
+    int numLibros = 0;
+public:
+    Libro(string nombre, int numVol ,int numLibros): Volumen(nombre,numVol){
+        this->numLibros=numLibros;
+    }
+
+    void mostrar() override {
+        Volumen::mostrar();
+        cout << "Numero de Libro: "<< numLibros << endl;
+    }
+};
+
 
 #endif //UNIDAD_2_AGREGACION_Y_POLIMORFISMO_FABRIZIOVX_BIBLIOTECA_H
