@@ -6,6 +6,8 @@
 #define UNIDAD_2_AGREGACION_Y_POLIMORFISMO_FABRIZIOVX_BIBLIOTECA_H
 
 #include "iostream"
+#include "cstddef"
+#include "vector"
 using namespace std;
 
 class Volumen{
@@ -22,8 +24,29 @@ public:
 };
 
 
-class Biblioteca{
 
+class Biblioteca {
+private:
+    vector<Volumen *> MaxLibros;                    //vector de Libros q
+    vector<Volumen *> MaxRevistas;                  //vector de revistas
+public:
+    Biblioteca()= default;
+
+    void incluir(Volumen *item) {
+        MaxLibros.push_back(item);
+    }
+
+    void mostrarBiblioteca() {
+        for (auto fabrizio : MaxLibros) {
+            fabrizio->mostrar();
+            cout << "\n";
+        }
+
+        for (auto fabrizio1 : MaxRevistas) {
+            fabrizio1->mostrar();
+            cout << "\n";
+        }
+    }
 };
 
 class Libro : public Volumen{
