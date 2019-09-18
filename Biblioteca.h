@@ -6,12 +6,12 @@
 #define UNIDAD_2_AGREGACION_Y_POLIMORFISMO_FABRIZIOVX_BIBLIOTECA_H
 
 class Volumen{
-protected:
+protected:                                                      //Se declara como protegido para que los atributos puedan ser usadas por sus clases hijas
     string nombre = NULL;
     int numVol = 0;
 public:
-    Volumen(string nombre, int numVol):nombre(nombre),numVol(numVol){}
-    virtual void mostrar(){
+    Volumen(string nombre, int numVol):nombre(nombre),numVol(numVol){}      //Const
+    virtual void mostrar(){                                     //Clase virtual ya que se redefinirá esta funcion en sus clases hijas: Libro , Revista
         cout<<"Nombre: "<<nombre<<endl;
         cout<<"Numero de Volumen: "<<numVol<<endl;
     }
@@ -27,14 +27,30 @@ class Libro : public Volumen{
 private:
     int numLibros = 0;
 public:
-    Libro(string nombre, int numVol ,int numLibros): Volumen(nombre,numVol){
-        this->numLibros=numLibros;
+    Libro(string nombre, int numVol ,int numLibros): Volumen(nombre,numVol){       // Constructor  que hereda nombre y numVol de la clase Volumen
+        this->numLibros=numLibros;                                                  //Pasando el atributo numLubros (ini)
     }
 
-    void mostrar() override {
+    void mostrar() override {                                                       //Muestra en pantalla los datos tanto del libro Volumen, Nombre y numero de Volumnes asi como el NumLbros
         Volumen::mostrar();
         cout << "Numero de Libro: "<< numLibros<<endl;
     }
+};
+
+
+class Revista : public Volumen{
+private:
+    int numRevistas = 0;
+public:
+    Revista(string nombre, int numVol, int numRevistas): Volumen(nombre,numVol){    // Constructor  que hereda nombre y numVol de la clase Volumen
+        this->numRevistas=numRevistas;                                              // Pasando el atributo numRevistas (ini)
+    }
+
+    void mostrar() override{                                                    //Muestra en pantalla los datos tanto del libro Volumen, Nombre y numero de Volumnes asi como el NumRevistas
+        Volumen::mostrar();
+        cout<<"Numero de Revista: "<<numRevistas<<endl;
+    }
+
 };
 
 
