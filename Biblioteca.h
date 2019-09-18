@@ -5,6 +5,9 @@
 #ifndef UNIDAD_2_AGREGACION_Y_POLIMORFISMO_FABRIZIOVX_BIBLIOTECA_H
 #define UNIDAD_2_AGREGACION_Y_POLIMORFISMO_FABRIZIOVX_BIBLIOTECA_H
 
+#include "iostream"
+using namespace std;
+
 class Volumen{
 protected:                                                      //Se declara como protegido para que los atributos puedan ser usadas por sus clases hijas
     string nombre = NULL;
