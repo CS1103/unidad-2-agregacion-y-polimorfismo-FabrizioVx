@@ -33,7 +33,7 @@ public:
 
     void mostrar() override {
         Volumen::mostrar();
-        cout << "Numero de Libro: "<< numLibros << endl;
+        cout << "Numero de Libro: "<< numLibros<<endl;
     }
 };
 
