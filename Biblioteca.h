@@ -10,7 +10,7 @@ using namespace std;
 
 class Volumen{
 protected:                                                      //Se declara como protegido para que los atributos puedan ser usadas por sus clases hijas
-    string nombre ;
+    string nombre;
     int numVol = 0;
 public:
     Volumen(string nombre, int numVol):nombre(nombre),numVol(numVol){}      //Const
